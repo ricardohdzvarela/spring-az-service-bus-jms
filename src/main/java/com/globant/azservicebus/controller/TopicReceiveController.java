@@ -13,16 +13,16 @@ public class TopicReceiveController {
     * Receive messages from a Service Bus subscription
     * */
 
-    private static final String TOPIC_NAME = "<ServiceBusTopicName>";
+    private static final String TOPIC_NAME = "users-topic";
 
-    private static final String SUBSCRIPTION_NAME = "<ServiceBusSubscriptionName>";
+    private static final String SUBSCRIPTION_NAME = "user-subscription";
 
     private final Logger logger = LoggerFactory.getLogger(TopicReceiveController.class);
 
     @JmsListener(destination = TOPIC_NAME, containerFactory = "topicJmsListenerContainerFactory",
             subscription = SUBSCRIPTION_NAME)
     public void receiveMessage(User user) {
-        logger.info("Received message: {}", user.getName());
+        logger.info("Received message: {}", user);
     }
 
 }
