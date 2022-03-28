@@ -13,13 +13,13 @@ public class QueueReceiveController {
     * Receive messages from a Service Bus queue
     * */
 
-    private static final String QUEUE_NAME = "<ServiceBusQueueName>";
+    private static final String QUEUE_NAME = "users";
 
     private final Logger logger = LoggerFactory.getLogger(QueueReceiveController.class);
 
     @JmsListener(destination = QUEUE_NAME, containerFactory = "jmsListenerContainerFactory")
     public void receiveMessage(User user) {
-        logger.info("Received message: {}", user.getName());
+        logger.info("Received message: {}", user);
     }
 
 }

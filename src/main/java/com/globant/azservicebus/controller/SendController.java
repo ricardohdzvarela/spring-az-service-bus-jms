@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SendController {
 
-    private static final String DESTINATION_NAME = "<DestinationName>";
+    private static final String TOPIC_NAME = "<DestinationName>";
 
     private static final Logger logger = LoggerFactory.getLogger(SendController.class);
 
@@ -22,7 +22,7 @@ public class SendController {
     @PostMapping("/messages")
     public String postMessage(@RequestParam String message) {
         logger.info("Sending message");
-        jmsTemplate.convertAndSend(DESTINATION_NAME, new User(message));
+        jmsTemplate.convertAndSend(TOPIC_NAME, new User(message));
         return message;
     }
 

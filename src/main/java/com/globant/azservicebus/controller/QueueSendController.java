@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QueueSendController {
 
-    private static final String QUEUE_NAME = "<DestinationName>";
+    private static final String QUEUE_NAME = "users";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(QueueSendController.class);
 
