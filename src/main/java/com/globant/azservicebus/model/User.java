@@ -9,9 +9,9 @@ import java.io.Serializable;
 @Data
 @Getter
 @Setter
-public class User implements Serializable {
+public class User /*implements Serializable */{
 
-    private static final long serialVersionUID = -4656934936684245771L;
+    //private static final long serialVersionUID = -4656934936684245771L;
 
     private String name;
     private int edad;
