@@ -21,6 +21,6 @@ public class User /*implements Serializable */{
 
     public User(String name) {
         this.name = name;
-        this.edad = 40;
+        this.edad = 30;
     }
 }
