@@ -1,6 +1,7 @@
 package com.globant.azservicebus.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.globant.azservicebus.model.RawEvent;
 import com.globant.azservicebus.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +35,8 @@ public class QueueSendController {
         } catch(IOException e){
             e.printStackTrace();
         }
-        jmsTemplate.convertAndSend(QUEUE_NAME, jsonObj);
+        //jmsTemplate.convertAndSend(QUEUE_NAME, jsonObj);
+        jmsTemplate.convertAndSend(QUEUE_NAME, RawEvent.builder().message("Testing: " + message).build());
         return message;
     }
 

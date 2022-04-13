@@ -15,4 +15,6 @@ public class RawEvent {
     private long created;
     private String correlationId;
     private String transactionId;
+    private String source;
+    private ChannelType channel;
 }
